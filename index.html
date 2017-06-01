@@ -12,6 +12,65 @@
 
 </head>
 <body>
+<!-- ASCIIMATION : test (begin)-->
+<table style="cursor:crosshair;" cellpadding=0 cellspacing=0 onmouseover="window.status='made in asciimator.net';" onmouseout="window.status='';" onclick="window.location.href='http://www.asciimator.net';">
+<tr><td>
+<div id="test_div">
+<pre id="test_id">&nbsp;</pre>
+</div>
+</td></tr>
+</table>
+<script>
+function run_test(){
+	title="";
+	ffamily="courier new";
+	fsize=12;
+	bgcolor="#FFFFFF";
+	fcolor="#000000";
+	speed=500;
+	looped=true;
+	fwidth=20;
+	fheight=10;
+	lh="120%";
+	document.getElementById("test_id").title=title;
+	if(document.getElementById("test_id")){
+		output=document.getElementById("test_id").style;
+		outputdiv=document.getElementById("test_div").style;
+		output.fontFamily=ffamily;
+		output.fontSize=fsize;
+		output.backgroundColor=bgcolor;
+		output.color=fcolor;
+		output.lineHeight=lh;
+		output.height=outputdiv.height=fheight*fsize*1.2;
+		output.width=outputdiv.width=fwidth*fsize*0.63;
+		}
+	if (navigator.userAgent.match(/MSIE/) && !navigator.userAgent.match(/Opera/)){
+		for (i=0; i<test.length; i++){
+		test[i]=test[i].replace(/\n/g,'\n\r');
+		}
+	}
+	fr_test=0;
+	setInterval(animate_test,speed,fr_test);
+}
+
+function animate_test(){
+	if (fr_test>test.length-1){
+		fr_test=0;
+	}
+	document.getElementById("test_id").childNodes[0].data=test[fr_test];
+	fr_test++;
+}
+
+var test= new Array();
+test[0]=" >> ";
+test[1]=" /  \n >> ";
+test[2]="\\~◒/\n  /  \n  >> ";
+test[3]="\n_~◒_\n  /\n / > \n";
+test[4]="\n\n_~◒_\n  |  \n / > ";
+    
+run_test();
+</script>
+<!-- ASCIIMATION : test (end)-->
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
